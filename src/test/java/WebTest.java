@@ -461,14 +461,44 @@ public class WebTest {
         driver.quit();
     }
 
-        //TC_11_15 Подтвердите, что на странице по базовой ссылке  пользователь НЕ увидит новые комментарии,
+        //TC_11_15 Подтвердите, что на странице по базовой ссылке пользователь НЕ увидит новые комментарии,
     // если нажмет на пункты меню Top List → New Comments
     //
     //Шаги:
     //Придумать самостоятельно.
+        @Test
+        public void testNewCommentInMenuTopListSubmenuNewComments() {
 
+            String chromeDriver = "webdriver.chrome.driver";
+            String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+            String url = "http://www.99-bottles-of-beer.net/";
+            String expectedResult = "";
 
-    //TC_11_21 Подтвердите, что на странице по ссылке http://www.99-bottles-of-beer.net/submitnewlanguage.html
+            System.setProperty(chromeDriver, driverPath);
+            WebDriver driver = new ChromeDriver();
+
+            driver.get(url);
+
+            WebElement menuTopList = driver.findElement(
+                    By.xpath("//body/div[@id ='wrap']/div[@id ='navigation']" +
+                            "/ul[@id = 'menu']/li/a[@href='/toplist.html']"));
+            menuTopList.click();
+
+            WebElement submenuNewComments = driver.findElement(
+                    By.xpath("//body/div[@id ='wrap']/div[@id ='navigation']/" +
+                            "ul[@id='submenu']/li/a[@href='./newcomments.html']"));
+            submenuNewComments.click();
+
+            WebElement newCommentInMenuTopListSubmenuNewComments = driver.findElement(
+                    By.xpath("//body/div[@id ='wrap']/div[@id ='main']/p"));
+            String actualResult = newCommentInMenuTopListSubmenuNewComments.getText();
+
+            Assert.assertEquals(actualResult, expectedResult);
+
+            driver.quit();
+        }
+
+         //TC_11_21 Подтвердите, что на странице по ссылке http://www.99-bottles-of-beer.net/submitnewlanguage.html
     // пользователь видит предупреждение IMPORTANT:, написанное белыми буквами bold шрифтом на красном фоне,
     // и что все буквы - capital
     //
@@ -477,6 +507,38 @@ public class WebTest {
     //2. Считать слово IMPORTANT: из списка
     //3. Подтвердить requirenments
     //4. Закрыть браузер
+
+    @Test
+    public void testSCCTextIMPORTANTInMenuSubmitNewLanguage() {
+
+        String chromeDriver = "webdriver.chrome.driver";
+        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String url = "http://www.99-bottles-of-beer.net/submitnewlanguage.html";
+        String expectedResult1 = "red";
+        String expectedResult2 = "white";
+        String expectedResult3 = "bold";
+        boolean expectedResult4 = true;
+
+        System.setProperty(chromeDriver, driverPath);
+        WebDriver driver = new ChromeDriver();
+
+        driver.get(url);
+
+        WebElement textIMPORTANTInMenuSubmitNewLanguage = driver.findElement(
+                By.xpath("//body/div[@id ='wrap']/div[@id ='main']/ul/li/span/b"));
+        String textIMPORTANT = textIMPORTANTInMenuSubmitNewLanguage.getText();
+
+        String actualResult1 = textIMPORTANTInMenuSubmitNewLanguage.getCssValue("background-color").toString();
+        String actualResult2 = textIMPORTANTInMenuSubmitNewLanguage.getCssValue("color").toString();
+        String actualResult3 = textIMPORTANTInMenuSubmitNewLanguage.getCssValue("font-weight").toString();
+
+       // Assert.assertEquals(actualResult1, expectedResult1);
+        Assert.assertEquals(actualResult2, expectedResult2);
+
+        //Assert.assertEquals(actualResult3, expectedResult3);
+
+        driver.quit();
+    }
 
 
 
