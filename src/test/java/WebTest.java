@@ -14,7 +14,7 @@ public class WebTest {
     public void testMenuStartTitle() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/";
         String expectedResult = "Welcome to 99 Bottles of Beer";
 
@@ -55,7 +55,7 @@ public class WebTest {
     public void testMainHeader() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/";
         String expectedResult = "99 Bottles of Beer";
 
@@ -85,7 +85,7 @@ public class WebTest {
     public void testMenuSubmitNewLanguageTitle() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/";
         String expectedResult = "Submit new Language".toUpperCase();
 
@@ -118,7 +118,7 @@ public class WebTest {
     public void testSubmenuSubmitNewLanguageTitle() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/";
         String expectedResult = "Submit New Language";
 
@@ -155,7 +155,7 @@ public class WebTest {
     public void testSubmenu09Title() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/abc.html";
         String expectedResult = "0-9";
 
@@ -187,7 +187,7 @@ public class WebTest {
     public void testCreatorsSiteTitles() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/";
         String expectedResult1 = "Oliver Schade";
         String expectedResult2 = "Gregor Scheithauer";
@@ -231,7 +231,7 @@ public class WebTest {
     public void testTitleInSubmenuNMenuBrowseLanguages() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/";
         String expectedResult = "Category N";
 
@@ -276,7 +276,7 @@ public class WebTest {
     public void testErrorInMenuSubmitNewLanguage() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/";
         boolean expectedResult1 = true;
         String expectedResult2 = "Error: Precondition failed - Incomplete Input.";
@@ -330,7 +330,7 @@ public class WebTest {
     public void testTextErrorInMenuSubmitNewLanguage() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/submitnewlanguage.html";
         boolean expectedResult1 = true;
         boolean expectedResult2 = true;
@@ -396,7 +396,7 @@ public class WebTest {
     public void testTextFirstPointInMenuSubmitNewLanguage() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/submitnewlanguage.html";
         String expectedResult = "IMPORTANT: Take your time! The more carefully you fill out this form (especially"
                 + " the language name and description), the easier it will be for us and the faster"
@@ -432,7 +432,7 @@ public class WebTest {
     public void testTableInMenuBrowseLanguages() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/";
         String expectedResult1 = "Language";
         String expectedResult2 = "Author";
@@ -470,7 +470,7 @@ public class WebTest {
         public void testNewCommentInMenuTopListSubmenuNewComments() {
 
             String chromeDriver = "webdriver.chrome.driver";
-            String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+            String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
             String url = "http://www.99-bottles-of-beer.net/";
             String expectedResult = "";
 
@@ -512,11 +512,11 @@ public class WebTest {
     public void testSCCTextIMPORTANTInMenuSubmitNewLanguage() {
 
         String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\Users\\Павлик\\chromedriver.exe";
+        String driverPath = "C:\\Users\\Daria\\chromedriver.exe";
         String url = "http://www.99-bottles-of-beer.net/submitnewlanguage.html";
-        String expectedResult1 = "red";
-        String expectedResult2 = "white";
-        String expectedResult3 = "bold";
+        String expectedResult1 = "rgba(0, 0, 0, 0)";
+        String expectedResult2 = "rgba(255, 255, 255, 1)";
+        String expectedResult3 = "700";
         boolean expectedResult4 = true;
 
         System.setProperty(chromeDriver, driverPath);
@@ -532,10 +532,9 @@ public class WebTest {
         String actualResult2 = textIMPORTANTInMenuSubmitNewLanguage.getCssValue("color").toString();
         String actualResult3 = textIMPORTANTInMenuSubmitNewLanguage.getCssValue("font-weight").toString();
 
-       // Assert.assertEquals(actualResult1, expectedResult1);
+        Assert.assertEquals(actualResult1, expectedResult1);
         Assert.assertEquals(actualResult2, expectedResult2);
-
-        //Assert.assertEquals(actualResult3, expectedResult3);
+        Assert.assertEquals(actualResult3, expectedResult3);
 
         driver.quit();
     }
